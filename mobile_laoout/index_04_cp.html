@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 04 </title>
+   <!-- <익스플로러 9 이하 구동 >
+   
+    1.htmlshiv 연결
+    2.venderprefix << 애니메이션 프리픽스 효과 넣어주기
+    3.미디어 쿼리 연결 : 이거는 조건부 각주로 넣어줘야 함 
+    <script src="css3.mediaquery.js"></script>   
+    -->
+    <style>
+        * { margin: 0; padding: 0;}
+        body,html{ width: 100%; }
+        ul { list-style: none;}
+        a {text-decoration: none; }
+
+        /* 모두 퍼센트나 rem단위로 하기, min-height, max-height  사용해도 ; 선택자는 항상 똑같이 써줘야 함: 높이는 부모가 없으니까 픽셀로 주기  */
+
+        .grid { width:100%; height:800px; }
+        .grid li { width: 100%; height: 100%; }
+        .grid .item1 { width: 10%; height: 100%; float:left;  background-color: pink; } 
+        .grid .item2 { width: 45%; height: 50%; background-color: green; } 
+        .grid .item3 { width: 45%; height: 50%; background-color: burlywood; } 
+        
+        @media screen and (min-width:767px){
+        .grid .item1 { width: 100%; height:10%;}
+        .grid .item2 { width: 100%; height: 80%;}
+        .grid .item3 { width: 100%; height: 10%; }
+       }
+            
+         @media screen and (min-width:768px) and ( max-width: 969px){
+        .grid .item1 { height:10%; }
+        .grid .item2 { height: 80%;}
+        .grid .item3 { height: 10%; }
+       }
+
+    </style>
+</head>
+<body>
+    <ul class="grid">
+        <li class="item1">1</li>
+        <li class="item2">2</li>
+        <li class="item3">3</li>
+    </ul>
+</body>
+</html>

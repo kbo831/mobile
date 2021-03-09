@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery의 연결과 필요성</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0;}
+        body,html{ width: 100%;}
+        ul { list-style: none; }
+        a { text-decoration: none; }
+    </style>
+    <!--객체, 변수 ,숫자는 따옴펴 안씀 / 스타일속성 선택자 (문자열)값일 때 따옴표 쓰기-->
+    <script>
+        $(document).ready(function(){
+           $(".lst").width(500);
+            $(".lst").height(500);
+            $(".lst").css("background","pink");
+        });
+     
+       function jquery_star(){
+            $(".lst").height(700);
+            
+        }
+        window.onload = function(){
+            jquery_star();
+        }
+        $(document).onload = function(){
+            jquery_star();
+        }
+    </script>
+</head>
+<body>
+    <ul class="lst">
+        <li class="item1"><span class="ico">1</span></li>
+        <li class="item2"><span class="ico">2</span></li>
+        <li class="item3"><span class="ico">3</span></li>
+        <li class="item4"><span class="ico">4</span></li>
+        <li class="item5"><span class="ico">5</span></li>
+    </ul>  
+    <!--<script>다시 공부하기
+    var lst = document.getElementsByClassName("lst");
+    lst[0].style.marginTop = "20px";
+   
+    </script>-->
+</body>
+</html>

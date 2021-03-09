@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 05: 유연한이미지: 동영상이나 이미지의 스탕리값 최대넓이 100% , 높이 자동  ; 사이즈는 데스크탑만큼 크게   </title>
+    <!--
+    <익스플로러 9 이하 구동 >
+   
+    1.htmlshiv 연결
+    2.venderprefix << 애니메이션 프리픽스 효과 넣어주기
+    3.미디어 쿼리 연결 : 이거는 조건부 각주로 넣어줘야 함 
+    <script src="css3.mediaquery.js"></script>  
+     
+    -->
+    <style>
+        * { margin: 0; padding: 0;}
+        body,html{ width: 100%; }
+        ul { list-style: none;}
+        a {text-decoration: none; }
+
+        .wrap { width: 100%; }
+        .tb { width: 100%; table-layout: fixed;}
+        thead { display: none; }
+        tbody{  width: 100%; }
+        th,td{ display: block;  margin-left: 10px; }
+        td { border-bottom: 1px solid;  line-height: 30px; text-align: center}
+        /* 가상선택자를 블럭처리하고 플로우를 주고 td에 text-align center 주면 됨*/
+        tbody tr td:first-child::before{ content:"번호 "; display: block; float:left; 700; }
+        tbody tr td:last-child::before{ content:" 품명 ";  display: block; float:left; font-weight: 700;}
+    </style>
+</head>
+<body>
+  <div class="wrap">
+      <table class="tb">
+         <h2>모바일 테이블 태그 사용법 </h2>
+          <thead>
+              <tr>
+                  <th>번호</th>
+                  <th>품명</th>
+             </tr>
+          </thead>
+                  <tbody>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td2">고구마</td>
+                          
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>감자</td>
+                          
+                      </tr>
+                      <tr>
+                          <td>3</td>
+                          <td>당근</td>
+                      </tr>
+                  </tbody>
+        
+      </table>
+  </div>
+</body>
+</html>

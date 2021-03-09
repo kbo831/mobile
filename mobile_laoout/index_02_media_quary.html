@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리: 미디어 사이즈, 방향 등에 따라 콘텐츠영역을 다르게 바꿔주는 규칙</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body,html{ width: 100%; }
+        ul { list-style: none;}
+        a {text-decoration: none; }
+
+        /* 다 퍼센트나 rem단위로 하기 */
+
+        .fluid_grid { width: 100%; height:600px; }
+        .fluid_grid li { float: left; height: 100%; margin-left: 5%; }
+        .fluid_grid .item1 { width: 25%; background-color: yellow; } 
+        .fluid_grid .item2 { width: 40%; background-color: greenyellow; } 
+        .fluid_grid .item3 { width: 15%; background-color: burlywood; } 
+        
+        
+        /* mobile_first 규칙 ; 유동성이 가장 높은 순으로 
+        1)모바일 2)태블릿 3) 데스크탑 4) 고해상도 
+        주의! 마진값 계산 꼭 하기, 미디어 쿼리를 할 때; 논리적 해상도를 기준으로 해야 함!
+        1)규칙 @media 기기이름 and (논리적해상도1) { 기기에 따라 변경 할 스타일 기입 }
+        2)규칙 @media 기기이름 and (논리적해상도1) and (논리적 해상도2) { 기기에 따라 변경 할 스타일 기입 }
+        * @media 기기이름  논리적해상도1 이상(min-width:~px)  논리적해상도2 이하(max-width:~px)
+        */
+        /*1.모바일*/
+        @media screen and ( max-width:767px){
+            .fluid_grid .item1 { width: 90%; }
+            .fluid_grid .item2 { width: 40%; height:50%; }
+            .fluid_grid .item3 { width: 45%; height:50%; }
+            
+        }
+         /*2.태블릿*/
+         @media screen and ( min-width:768px) and ( max-width:959px){
+            .fluid_grid .item1 { width: 50%; height:90% }
+            .fluid_grid .item2 { width: 35%; height:90% }
+            .fluid_grid .item3 { width: 90%; height:90% }
+            
+        }
+        /*3.데스크탑*/
+         @media screen and (min-width:960px) and (max-width:1280px) {
+            .fluid_grid .item1 { width: 25%; background-color: yellow; } 
+            .fluid_grid .item2 { width: 40%; background-color: greenyellow; } 
+            .fluid_grid .item3 { width: 15%; background-color: burlywood; } 
+            
+        }
+         /*4.고해상도*/
+         @media screen and ( max-width:1280px){
+            .fluid_grid .item1 { width: 50%; height:90% }
+            .fluid_grid .item2 { width: 35%; height:90% }
+            .fluid_grid .item3 { width: 90%; height:90% }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="fluid_grid">
+        <li class="item1">1</li>
+        <li class="item2">2</li>
+        <li class="item3">3</li>
+    </ul>
+</body>
+</html>

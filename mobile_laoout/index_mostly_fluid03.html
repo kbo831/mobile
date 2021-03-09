@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모스트 플루이드 그리드</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        body,html{ width: 100%; }
+        ul { list-style: none;}
+        a {text-decoration: none; }
+
+        /* 모두 퍼센트나 rem단위로 하기, min-height, max-height  사용해도 됨 */
+
+        .most { width: 100%; height:600px; margin: 0 auto;}
+        .most li { height: 100%; margin-left: 5%; margin-top: 5px; float:left}
+        .most .item1 { width: 25%; background-color: yellow; } 
+        .most .item2 { width: 40%; background-color: greenyellow; } 
+        .most .item3 { width: 15%; background-color:pink; } 
+        
+         @media screen and ( max-width:767px){
+           /*변동값을 각각 줘야 함 */
+            .most li.item1,.most li.item2,.most li.item3 { width: 100%; margin-left: 0%; }
+          
+            
+        }
+         /*2.태블릿*/
+         @media screen and ( min-width:768px) and ( max-width:959px){
+           /* .most { width: 1000px; }*/
+          .most li.item1,.most li.item2,.most li.item3 { width: 100%; margin-left: 0%; }
+            
+        }
+        /*3.데스크탑*/
+         @media screen and (min-width:960px) and (max-width:1280px) {
+            
+            .most li.item1 { width: 100%;  background-color: yellow; } 
+            .most li.item2 { width: 45%; background-color: greenyellow; } 
+            .most li.item3 { width: 45%;  background-color: pink; } 
+            
+        }
+         /*4.고해상도*/
+         @media screen and ( max-width:1281px){
+            .most { width: 1200px;  margin-left: 0; }
+            .most .item1 { width: 100%; }
+            .most .item2 { width: 100%; }
+            .most .item3 { width: 100% }
+        
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="most">
+        <li class="item1">1</li>
+        <li class="item2">2</li>
+        <li class="item3">3</li>
+    </ul>
+</body>
+</html>
